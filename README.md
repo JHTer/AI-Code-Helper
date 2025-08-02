@@ -316,13 +316,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **[Google AI](https://ai.google.dev/)** - Powerful Gemini language models
 - **[Spring Boot](https://spring.io/projects/spring-boot)** - Robust application framework
 - **Windows 95** - For the iconic UI inspiration
-- **[Vite](https://vitejs.dev/)** - Lightning-fast frontend tooling
 
-## 📞 Support
-
-- **Issues**: [GitHub Issues](https://github.com/yourusername/ai-code-helper/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/ai-code-helper/discussions)
-- **Documentation**: [Wiki](https://github.com/yourusername/ai-code-helper/wiki)
 
 ---
 
