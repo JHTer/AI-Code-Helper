@@ -1,0 +1,47 @@
+# Test Configuration - AI Code Helper
+spring:
+  application:
+    name: ai-code-helper-test
+
+# Mock Configuration for Testing (prevent startup failures)
+vertex-ai:
+  project-id: test-project
+  location: us-central1
+  model-name: gemini-1.5-flash
+  temperature: 0.7
+  max-tokens: 2000
+
+# Mock BigModel API for Testing
+bigmodel:
+  api-key: test-bigmodel-key
+
+# AI Service Configuration for Testing
+ai:
+  chat:
+    memory:
+      max-messages: 5  # Reduced for faster tests
+  monitoring:
+    detailed-logging: false
+    log-user-messages: false
+  tools:
+    web-scraper:
+      timeout-seconds: 5  # Faster timeout for tests
+      max-questions: 10
+  guardrail:
+    additional-sensitive-words: ""
+  rag:
+    document-path: "src/test/resources/test-docs"  # Use test documents
+    chunk-size: 500
+    chunk-overlap: 100
+    max-results: 3
+    min-score: 0.5
+  mcp:
+    enable-request-logging: false
+    enable-response-logging: false
+
+# Logging Configuration for Tests
+logging:
+  level:
+    com.aicodehelper: WARN  # Reduce log noise in tests
+    dev.langchain4j: ERROR
+    root: WARN

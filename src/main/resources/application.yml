@@ -1,0 +1,62 @@
+# AI Code Helper Application Configuration
+spring:
+  application:
+    name: ai-code-helper
+  profiles:
+    active: development
+
+server:
+  port: 8081
+  servlet:
+    context-path: /api
+    encoding:
+      charset: UTF-8
+      enabled: true
+
+# Google AI Studio Configuration for Gemini Models
+google-ai:
+  model-name: gemini-2.0-flash-exp
+  temperature: 0.7
+  max-tokens: 2000
+
+# BigModel API for MCP Web Search
+bigmodel:
+  api-key: ${BIGMODEL_API_KEY:<Your BigModel API Key>}
+
+# AI Service Configuration
+ai:
+  chat:
+    memory:
+      max-messages: 10
+  monitoring:
+    detailed-logging: false
+    log-user-messages: false
+  tools:
+    web-scraper:
+      timeout-seconds: 10
+      max-questions: 20
+  guardrail:
+    additional-sensitive-words: ""
+  rag:
+    document-path: "src/main/resources/docs"
+    chunk-size: 1000
+    chunk-overlap: 200
+    max-results: 5
+    min-score: 0.75
+  mcp:
+    enable-request-logging: false
+    enable-response-logging: false
+
+# CORS Configuration
+cors:
+  allowed-origins: "http://localhost:3000,http://localhost:5173,http://localhost:8080"
+  max-age: 3600
+
+# Logging Configuration
+logging:
+  level:
+    com.aicodehelper: DEBUG
+    dev.langchain4j: WARN
+    root: INFO
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
